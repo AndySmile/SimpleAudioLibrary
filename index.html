@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Simple Audio Library by AndySmile</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Simple Audio Library</h1>
+        <p class="header">Simple C++ library using OpenAL</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/AndySmile/SimpleAudioLibrary/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/AndySmile/SimpleAudioLibrary/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/AndySmile/SimpleAudioLibrary">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/AndySmile">AndySmile</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a id="simple-audio-library" class="anchor" href="#simple-audio-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Simple Audio Library</h1>
+
+<p>This is a simple audio library using OpenAL. It was made with the thought in mind to have a pretty simple tool
+for playing sound/music in a game or another multimedia application.</p>
+
+<p>WARNING: This is a pretty early version, keep in mind, that method/classes can be removed/renamed/changed at any time.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Simple Audio Library is released under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
+
+<h2>
+<a id="platform" class="anchor" href="#platform" aria-hidden="true"><span class="octicon octicon-link"></span></a>Platform</h2>
+
+<p>For now, it is only build for Mac OS X. But Windows will be also supported as soon as possible.</p>
+
+<h2>
+<a id="how-to-build" class="anchor" href="#how-to-build" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to build</h2>
+
+<p><strong>Mac OS X</strong></p>
+
+<ul>
+<li>Open your console and go to <code>"[directory of your copy]/Code/"</code>
+</li>
+<li>Enter: <code>make</code>
+</li>
+</ul>
+
+<p>Now it'll compile the library on your machine and after it's finished it copies all header files into:
+<code>"[directory of your copy]/Header/"</code> and the bineary to
+<code>"[directory of your copy]/Lib/"</code>.</p>
+
+<p>So, to use this library in your application, all you have to do is to set the header path to:
+<code>"[directory of your copy]/Header/"</code> and the library path to:
+<code>"[directory of your copy]/Lib/"</code> and here we go, you're ready to work with this libary.</p>
+
+<h3>
+<a id="visual-studio-code" class="anchor" href="#visual-studio-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Visual Studio Code</h3>
+
+<p>The current version also includes a tasks configuration file for Visual Studio Code. All you have to
+do is to open the project in Visual Studio Code and hit <code>CTRL + Shift + B</code> to start the build process
+directly in Visual Studio Code.</p>
+
+<h2>
+<a id="code-example" class="anchor" href="#code-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Example</h2>
+
+<p>This is the simplest version to work with this library:</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-c">// include needed header file</span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>SimpleAudioLib/CoreSystem.h<span class="pl-pds">&gt;</span></span>
+
+<span class="pl-c">// before you can use this library, you have to initialize it</span>
+SimpleAudioLib::CoreSystem&amp; system = SimpleAudioLib::CoreSystem::getInstance();
+
+system.initWithDefaultDevice();
+
+<span class="pl-c">// load audio file in wave format</span>
+SimpleAudioLib::AudioEntity* sound = system.createAudioEntityFromFile(<span class="pl-s"><span class="pl-pds">"</span>YourAudioFile.wav<span class="pl-pds">"</span></span>);
+
+<span class="pl-c">// play sound</span>
+sound.play();
+
+<span class="pl-c">// clean up</span>
+<span class="pl-k">delete</span> sound;
+sound = <span class="pl-c1">NULL</span>;
+
+<span class="pl-en">SimpleAudioLib::CoreSystem::release</span>();</pre></div>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
+  </body>
+</html>
