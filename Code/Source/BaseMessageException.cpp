@@ -39,9 +39,9 @@ namespace SimpleAudioLib
      *
      * @param message - string including exception message
      */
-    BaseMessageException::BaseMessageException(const std::string message) : 
-        std::exception(),
-        _message(message)
+    BaseMessageException::BaseMessageException(const std::string message)
+        : std::exception()
+        , _message(message)
     {
     }
     
@@ -50,8 +50,8 @@ namespace SimpleAudioLib
      *
      * @param src - reference to the other instance of this class
      */
-    BaseMessageException::BaseMessageException(const BaseMessageException &src) :
-        _message(src._message)
+    BaseMessageException::BaseMessageException(const BaseMessageException &src)
+        : _message(src._message)
     {
     }
 

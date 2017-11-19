@@ -49,9 +49,9 @@ namespace SimpleAudioLib
     /**
      * Creates new instance of this class.
      */
-    CoreSystem::CoreSystem(void) :
-        _device(NULL),
-        _context(NULL)
+    CoreSystem::CoreSystem(void) 
+        : _device(NULL)
+        , _context(NULL)
     {
     }
     
@@ -60,9 +60,9 @@ namespace SimpleAudioLib
      *
      * @param src - reference to the other instance of this class
      */
-    CoreSystem::CoreSystem(const CoreSystem &src) :
-        _device(NULL),
-        _context(NULL)
+    CoreSystem::CoreSystem(const CoreSystem &src) 
+        : _device(NULL)
+        , _context(NULL)
     {
     }
 
@@ -95,7 +95,8 @@ namespace SimpleAudioLib
      */
     CoreSystem& CoreSystem::getInstance(void)
     {
-        if(_instance == NULL){
+        if (_instance == NULL)
+        {
             _instance = new CoreSystem();
         }
         
@@ -109,7 +110,8 @@ namespace SimpleAudioLib
      */
     void CoreSystem::release(void)
     {
-        if (_instance != NULL) {
+        if (_instance != NULL) 
+        {
             _instance->_release();
             
             delete _instance;
@@ -122,12 +124,14 @@ namespace SimpleAudioLib
      */
     void CoreSystem::_release(void)
     {
-        if (this->_context != NULL) {
+        if (this->_context != NULL) 
+        {
             alcMakeContextCurrent(NULL);
             alcDestroyContext(this->_context);
         }
         
-        if (this->_device != NULL) {
+        if (this->_device != NULL) 
+        {
             alcCloseDevice(this->_device);
         }
     }
@@ -146,17 +150,21 @@ namespace SimpleAudioLib
     {
         AudioEntity* entity = NULL;
         
-        if (path.empty()) {
+        if (path.empty()) 
+        {
             throw InvalidPathException("Load wave file failure: no path to file defined!");
         }
         
         std::ifstream file(path.c_str(), std::ifstream::binary);
         
-        if (!file.is_open()) {
+        if (!file.is_open()) 
+        {
             throw CorruptedFileException("Load wave file failure: file couldn't be opened!");
-        } else {
-            char chunkId[5] 	= "\0";
-            unsigned int size 	= 0;
+        } 
+        else 
+        {
+            char chunkId[5] = "\0";
+            unsigned int size = 0;
         
             // read header
             file.read(chunkId, 4);
@@ -183,12 +191,12 @@ namespace SimpleAudioLib
             std::cout << "Size: " << size << "bytes" << std::endl;
 #endif		
             // read first chunk content
-            short formatTag 		= 0;
-            short channels 			= 0;
-            int samplesPerSec 		= 0;
-            int averageBytesPerSec 	= 0;
-            short blockAlign 		= 0;
-            short bitsPerSample 	= 0;
+            short formatTag = 0;
+            short channels = 0;
+            int samplesPerSec = 0;
+            int averageBytesPerSec = 0;
+            short blockAlign = 0;
+            short bitsPerSample = 0;
         
             file.read((char*)&formatTag, 2);
             file.read((char*)&channels, 2);
@@ -202,26 +210,27 @@ namespace SimpleAudioLib
             }
             
 #ifdef _DEBUG			
-            switch (formatTag) {
-                case 0x0001: {
+            switch (formatTag) 
+            {
+                case 0x0001:
                     std::cout << "PCM Format" << std::endl;
-                } break;
+                    break;
             
-                case 0x0003: {
+                case 0x0003:
                     std::cout << "IEEE Float Format" << std::endl;
-                } break;
+                    break;
             
-                case 0x0006: {
+                case 0x0006: 
                     std::cout << "8-bit ITU-T G.711 A-law Format" << std::endl;
-                } break;
+                    break;
             
-                case 0x0007: {
+                case 0x0007:
                     std::cout << "8-bit ITU-T G.711 mi-law Format" << std::endl;
-                } break;
+                    break;
             
-                default: {
+                default:
                     std::cout << "Unknown format tag" << std::endl;
-                } break;
+                    break;
             }
 
             std::cout << "Channels: " << channels << std::endl;
@@ -268,15 +277,19 @@ namespace SimpleAudioLib
     {
         this->_device = alcOpenDevice(NULL);
         
-        if (this->_device == NULL) {
+        if (this->_device == NULL) 
+        {
             throw NoDeviceException("Init with default device failure: Couldn't open a connection to audio device!");
         }
         
         this->_context = alcCreateContext(this->_device, NULL);
         
-        if (this->_context == NULL) {
+        if (this->_context == NULL) 
+        {
             throw NoContextException("Init with default device failure: Couldn't create OpenAL context!");
-        } else {
+        } 
+        else 
+        {
             alcMakeContextCurrent(this->_context);
         }
     }

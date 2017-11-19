@@ -38,15 +38,15 @@ namespace SimpleAudioLib
     /**
      * Creates new instance of this class.
      *
-     * @param data 			- bineary audio content
-     * @param size			- size of the bineary audio content
-     * @param frequency		- audio frequency
-     * @param numChannels	- number of channels that audio content is made for
+     * @param data          - bineary audio content
+     * @param size          - size of the bineary audio content
+     * @param frequency     - audio frequency
+     * @param numChannels   - number of channels that audio content is made for
      */
-    AudioEntity::AudioEntity(unsigned char* data, const unsigned int size, const unsigned int frequency, const short numChannels) :
-        _buffer(0),
-        _source(0),
-        _state(STATE_STOP)
+    AudioEntity::AudioEntity(unsigned char* data, const unsigned int size, const unsigned int frequency, const short numChannels) 
+        : _buffer(0)
+        , _source(0)
+        , _state(STATE_STOP)
     {
         alGenBuffers(1, &this->_buffer);
         alBufferData(this->_buffer, (numChannels == 2) ? AL_FORMAT_STEREO16 : AL_FORMAT_MONO16, data, size, frequency);
@@ -60,10 +60,10 @@ namespace SimpleAudioLib
      *
      * @param src - reference to the other instance of this class
      */
-    AudioEntity::AudioEntity(const AudioEntity &src) :
-        _buffer(src._buffer),
-        _source(src._source),
-        _state(STATE_STOP)
+    AudioEntity::AudioEntity(const AudioEntity &src)
+        : _buffer(src._buffer)
+        , _source(src._source)
+        , _state(STATE_STOP)
     {
     }
     
@@ -92,7 +92,8 @@ namespace SimpleAudioLib
      */
     void AudioEntity::play(const bool loop)
     {
-        if (this->_state != STATE_PLAY) {
+        if (this->_state != STATE_PLAY) 
+        {
             this->_state = STATE_PLAY;
             
             alSourcei(this->_source, AL_LOOPING, loop);
@@ -105,7 +106,8 @@ namespace SimpleAudioLib
      */
     void AudioEntity::pause(void)
     {
-        if (this->_state != STATE_PAUSE) {
+        if (this->_state != STATE_PAUSE) 
+        {
             this->_state = STATE_PAUSE;
             
             alSourcePause(this->_source);
@@ -117,7 +119,8 @@ namespace SimpleAudioLib
      */
     void AudioEntity::stop(void)
     {
-        if (this->_state != STATE_STOP) {
+        if (this->_state != STATE_STOP) 
+        {
             this->_state = STATE_STOP;
             
             alSourceStop(this->_source);
