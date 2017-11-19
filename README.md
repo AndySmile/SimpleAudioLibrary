@@ -1,4 +1,4 @@
-#Simple Audio Library
+# Simple Audio Library
 
 This is a simple audio library using OpenAL. It was made with the thought in mind to have a pretty simple tool
 for playing sound/music in a game or another multimedia application.
@@ -41,8 +41,7 @@ The current version also includes a tasks configuration file for Visual Studio C
 do is to open the project in Visual Studio Code and hit ```CTRL + Shift + B``` to start the build process
 directly in Visual Studio Code.
 
-```NOTE: The build process in Visual Studio Code triggers the make file and is therefore only available for those platforms where GNU make
-is installed and functional. Currently it was only tested on Mac OS X.```
+```NOTE: The build process in Visual Studio Code triggers the make file and is therefore only available for those platforms where GNU make is installed and functional. Currently it was only tested on Mac OS X.```
 
 ### Visual Studio Express 2010
 
@@ -52,6 +51,7 @@ Afterwards you can add the library into your project like every other library.
 ## Code Example
 
 This is the simplest version to work with this library:
+
 ```c++
 // include needed header file
 #include <SimpleAudioLib/CoreSystem.h>
