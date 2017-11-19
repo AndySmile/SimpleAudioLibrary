@@ -1,12 +1,12 @@
 {
-	"version": "0.1.0",
-	"command": "make",
-	"isShellCommand": true,
-	"tasks": [
-		{
-			"taskName": "build",
-			"isBuildCommand": true,
-			"showOutput": "always"
-		}
-	]
+    "version": "0.1.0",
+    "command": "make",
+    "isShellCommand": true,
+    "tasks": [
+        {
+            "taskName": "build",
+            "isBuildCommand": true,
+            "showOutput": "always"
+        }
+    ]
 }
