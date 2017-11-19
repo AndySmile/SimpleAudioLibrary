@@ -1,3 +1,5 @@
+// Copyright (c) 2013-2017 by Andy Liebke. All rights reserved.
+
 /**
  * Simple Audio Library - Corrupted File Exception.
  *
@@ -24,11 +26,6 @@
  *	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *	THE SOFTWARE.
- *
- * @author		Andy Liebke<coding@andysmiles4games.com>
- * @file		Header/SimpleAudioLib/CorruptedFileException.h
- * @version		1.1.1 01-Jan-16
- * @copyright	Copyright (c) 2013-2017 by Andy Liebke. All rights reserved. (http://andysmiles4games.com)
  */
 #ifndef __CORRUPTED_FILE_EXCEPTION_H__
 #define __CORRUPTED_FILE_EXCEPTION_H__

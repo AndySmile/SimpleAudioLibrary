@@ -1,3 +1,5 @@
+// Copyright (c) 2013-2017 by Andy Liebke. All rights reserved.
+
 /**
  * Simple Audio Library - Core System Model.
  *
@@ -26,11 +28,6 @@
  *	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *	THE SOFTWARE.
- *
- * @author		Andy Liebke<coding@andysmiles4games.com>
- * @file		Header/SimpleAudioLib/CoreSystem.h
- * @version		1.2.2 03-Jan-16
- * @copyright	Copyright (c) 2013-2017 by Andy Liebke. All rights reserved. (http://andysmiles4games.com)
  */
 #ifndef __SIMPLE_AUDIO_SYSTEM_H__
 #define __SIMPLE_AUDIO_SYSTEM_H__

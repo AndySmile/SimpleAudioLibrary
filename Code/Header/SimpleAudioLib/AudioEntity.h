@@ -1,3 +1,5 @@
+// Copyright (c) 2013-2017 by Andy Liebke. All rights reserved.
+
 /**
  * Simple Audio Library - Audio Entity Model.
  *
@@ -24,11 +26,6 @@
  *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  *  THE SOFTWARE.
- *  
- * @author      Andy Liebke<coding@andysmiles4games.com>
- * @file        Header/SimpleAudioLib/AudioEntity.h
- * @version     1.2.1 01-Jan-16
- * @copyright   Copyright (c) 2013-2017 by Andy Liebke. All rights reserved. (http://andysmiles4games.com)
  */
 #ifndef __AUDIO_ENTITY_H__
 #define __AUDIO_ENTITY_H__
